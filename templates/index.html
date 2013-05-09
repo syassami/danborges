@@ -6,13 +6,32 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link href="/static/bootstrap.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script type=text/javascript>
+  $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+	</script>
 </head>
 <title>Hello from Dan Borges</title>
 <body style='padding-top:40px;'>
 {% if words %}
 <div class="row">
 	<div class="hero-unit">
-	  <h1 style="text-align: center">{{ words }}</h1>
+		<script type=text/javascript>
+		setInterval(
+		function()
+		{
+		     $.getJSON(                            //Get some values from the server
+		        $SCRIPT_ROOT + '/get_values',      // At this URL
+		        {},                                // With no extra parameters
+		        function(data)                     // And when you get a response
+		        {
+		          $("#wordline").text(data.result);  // Write the results into the 
+		                                           // #result element
+		        });
+		  },
+		  10000);                                    // And do it every 500ms  
+		</script>
+	  <h1 id="wordline" style="text-align: center">{{ words }}</h1>
 	</div>
 </div>
 {% else %}
