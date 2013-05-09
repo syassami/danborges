@@ -10,10 +10,9 @@ raw = "the universe, which others call the library, is composed of an indefinite
 raw = raw.split()
 raw = ' '.join([str(w) for w in random.sample(raw, len(raw))])
 
-
 tokens = nltk.word_tokenize(raw)
 text = nltk.Text(tokens)
 estimator = lambda fdist, bins: nltk.probability.LidstoneProbDist(fdist, 0.2)
-model = nltk.NgramModel(2, text, estimator=estimator)
+model = nltk.NgramModel(5, text, estimator=estimator)
 first_words =  model.generate(42)[-2:]
 print ' '.join(model.generate(16, first_words))
