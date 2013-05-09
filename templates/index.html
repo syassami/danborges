@@ -13,31 +13,40 @@
 </head>
 <title>Hello from Dan Borges</title>
 <body>
-  <section class="sample" id="tufte">
+  <section class="sample" id="bringhurst">
     <section class="text">
-        <h1><span>Jorge Luis B<span class="kern">o</span>r<span class="kern push">g</span>es</span></h1>
-        {% if words %}
         <script type=text/javascript>
-		setInterval(
-		function()
-		{
-		     $.getJSON(                           
-		        $SCRIPT_ROOT + '/get_values',      
-		        {},                              
-		        function(data)                    
-		        {
-		          // console.log(data.result)
-		          $("#wordline").text(data.result).prepend('<span>&ldquo;</span>').append('<span>&rdquo;</span>');; 
-		        });
-		  },
-		  10000);                                    
-		</script>
-        <p id="wordline"><span>&ldquo;</span>{{ words }}<span>&rdquo;</span></p>
+          setInterval(
+          function()
+          {
+               $.getJSON(                           
+                  $SCRIPT_ROOT + '/get_values',      
+                  {},                              
+                  function(data)                    
+                  {
+                    // console.log(data.result)
+                    $("#wordline").text(data.result).prepend('<span>&ldquo;</span>').append('<span>&rdquo;</span>');; 
+                  });
+            },
+            10000);                                    
+        </script>
+        {% if words %}
+        <h1 id="wordline">&ldquo;{{ words }}&rdquo;</h1>
         {% else %}
-		<p><span>&ldquo;</span>There is an error<span>&rdquo;</span></p>
-		{% endif %}
-      </a>
+        <h1 id="wordline">&ldquo;{{ words }}&rdquo;</h1>
+        {% endif %}
+        <p>&mdash;Jorge Luis Borges</p>
     </section>
   </section>
+  <footer>
+   <p> The above line was inspired by my discovery of unexplained discrepancies between the 1941 and 1944 versions of Jorge Luis Borges’ “La Biblioteca de Babel.”
+Borges (or his editors) made significant changes to the short story between 1941 and 1944. The text published in El Jardin de los Senderos Que se Bifurcan (1941) and translated by Andrew Hurley in 1998 includes the following description of the library’s contents:
+… its bookshelves contain all the possible combinations of the twenty-two orthographic symbols (a number which, though unimaginably vast, is not infinite)—that is, all that is able to be expressed, in every language. All—the detailed history of the future, … the true story of your death, the translation of every book into every language, the interpolations of every book into all books, the treatise Bede could have written (but did not) on the mythology of the Saxon people, the lost books of Tacitus.[1]
+In 1944, “La Biblioteca de Babel" was grouped with nine "Artificos" and published by Editorial Sur as Ficciones, but part of the sentence published in 1941 was removed. In Kerrigan’s translation of 1962 the paragraph in question says:
+… its shelves contain all the possible combinations of the twenty-odd orthographic symbols (whose number though vast, is not infinite); that is, everything which can be expressed, in all languages. Everything is there: the minute history of the future, … the veridical account of your death, a version of each book in all languages, the interpolations of every book in all books.[2]
+The reason for the omission of the phrases is not certain, but they seem tautological. If the library is total, all books are books that Bede could have written, and no book is permanently "lost"- they are all in the library. The passage lost no meaning and became more concise after the phrases were erased.
+The "long experimental lottery" of this infinite-ive digital translation (a play on the desire for definitive texts) randomly selects sixteen words and creates a line of approximately eighty characters. After approximately ten seconds, the line disappears. The experiment refreshes and a new result is published. An open browser will generate roughly 8, 640 lines every day. (It is unknown whether or not lines will still be generated if no browser is open or if no user is watching). By reformatting and hybridizing the two printed translations, this online "double translation” is like a literary double helix, shuffling strands in order to map a sequence of poetic, Borgesian mutations.
+    </p>
+  </footer>
 </body>
 		
