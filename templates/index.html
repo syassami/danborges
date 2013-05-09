@@ -5,18 +5,20 @@
     <title></title>
     <meta name="description" content="">
     <meta name="author" content="">
-    <link href="/static/bootstrap.css" rel="stylesheet">
+    <link href="/static/application.css" rel="stylesheet">
     <script src="http://code.jquery.com/jquery-1.9.1.min.js" type="text/javascript"></script>
     <script type=text/javascript>
   $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
 	</script>
 </head>
 <title>Hello from Dan Borges</title>
-<body style='padding-top:40px;'>
-{% if words %}
-<div class="row">
-	<div class="hero-unit">
-		<script type=text/javascript>
+<body>
+  <section class="sample" id="tufte">
+    <section class="text">
+      <a href="http://www.google.com/webfonts/specimen/Vollkorn" title="Vollkorn">
+        <h1><span>Jorge Luis B<span class="kern">o</span>r<span class="kern push">g</span>es</span></h1>
+        {% if words %}
+        <script type=text/javascript>
 		setInterval(
 		function()
 		{
@@ -25,17 +27,18 @@
 		        {},                              
 		        function(data)                    
 		        {
-		          $("#wordline").text(data.result); 
-		                                           
+		          // console.log(data.result)
+		          $("#wordline").text(data.result).prepend('<span>&ldquo;</span>').append('<span>&rdquo;</span>');; 
 		        });
 		  },
 		  10000);                                    
 		</script>
-	  <h1 id="wordline" style="text-align: center">{{ words }}</h1>
-	</div>
-</div>
-{% else %}
-  <h1> Oops there are no words!</h1>
-{% endif %}
+        <p id="wordline"><span>&ldquo;</span>{{ words }}<span>&rdquo;</span></p>
+        {% else %}
+		<p><span>&ldquo;</span>There is an error<span>&rdquo;</span></p>
+		{% endif %}
+      </a>
+    </section>
+  </section>
 </body>
-</html>
+		
