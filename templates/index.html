@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="/static/bootstrap.css" rel="stylesheet">
+</head>
+<title>Hello from Dan Borges</title>
+<body style='padding-top:40px;'>
+{% if words %}
+<div class="row">
+	<div class="hero-unit">
+	  <h1 style="text-align: center">{{ words }}</h1>
+	</div>
+</div>
+{% else %}
+  <h1> Oops there are no words!</h1>
+{% endif %}
+</body>
+</html>
