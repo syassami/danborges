@@ -23,12 +23,12 @@ words = "the universe, which others call the library, is composed of an indefini
 list = words.split()
 
 def runBorges():
-	# toReturn = []
-	# for i in xrange(16):
-	# 	toReturn.append(list[randrange(len(list))])
-	# # text = nltk.Text(toReturn)
-	# return " ".join(toReturn)
-	return Markov("borges.txt").generate_markov_text()
+	toReturn = []
+	for i in xrange(16):
+		toReturn.append(list[randrange(len(list))])
+	# text = nltk.Text(toReturn)
+	return " ".join(toReturn)
+	# return Markov("borges.txt").generate_markov_text()
 
 class Markov(object):
   
