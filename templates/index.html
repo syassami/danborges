@@ -20,16 +20,16 @@
 		setInterval(
 		function()
 		{
-		     $.getJSON(                            //Get some values from the server
-		        $SCRIPT_ROOT + '/get_values',      // At this URL
-		        {},                                // With no extra parameters
-		        function(data)                     // And when you get a response
+		     $.getJSON(                           
+		        $SCRIPT_ROOT + '/get_values',      
+		        {},                              
+		        function(data)                    
 		        {
-		          $("#wordline").text(data.result);  // Write the results into the 
-		                                           // #result element
+		          $("#wordline").text(data.result); 
+		                                           
 		        });
 		  },
-		  10000);                                    // And do it every 500ms  
+		  10000);                                    
 		</script>
 	  <h1 id="wordline" style="text-align: center">{{ words }}</h1>
 	</div>
