@@ -29,7 +29,7 @@ text = nltk.Text(tokens)
 
 def runBorges():
 	estimator = lambda fdist, bins: nltk.probability.LidstoneProbDist(fdist, 0.2)
-	model = nltk.NgramModel(3, text, estimator=estimator)
+	model = nltk.NgramModel(2, text, estimator=estimator)
 	first_words =  model.generate(42)[-2:]
 	return ' '.join(model.generate(16, first_words))
 

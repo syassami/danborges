@@ -1,1 +1,1 @@
-web: gunicorn dan:app
+web: gunicorn bet:app
