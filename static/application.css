@@ -72,7 +72,7 @@ footer {
   text-align: center; }
   footer p {
     color: #555;
-    font: 400 13px/13px "open sans"; }
+    font: 400 15px/15px "open sans"; }
     footer p a {
       color: #555;
       font-weight: 700; }
@@ -168,7 +168,8 @@ footer {
   .sample#bringhurst .text {
     margin: 0 auto;
     padding: 0 20px;
-    width: 410px; }
+    width: 1200px;
+    text-align: center; }
   .sample#bringhurst h1 {
     color: #333;
     font: 400 20px/30px "vollkorn";
