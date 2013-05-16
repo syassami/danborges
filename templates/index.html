@@ -25,13 +25,15 @@
                   function(data)                    
                   {
                     // console.log(data.result)
-                    $("#wordline").text(data.result).prepend('<span>&ldquo;</span>').append('<span>&rdquo;</span>');; 
+                    $("#wordline").text(data.result[0]).prepend('<span>&ldquo;</span>').append('<span>&rdquo;</span>');
+                    $("#wordlinespanish").text(data.result[1]).prepend('<span>&ldquo;</span>').append('<span>&rdquo;</span>');;  
                   });
             },
             10000);                                    
         </script>
         {% if words %}
-        <h1 id="wordline">&ldquo;{{ words }}&rdquo;</h1>
+        <h1 id="wordline">&ldquo;{{ words[0] }}&rdquo;</h1>
+        <h1 id="wordlinespanish">&ldquo;{{ words[1].decode('utf-8') }}&rdquo;</h1>
         {% else %}
         <h1 id="wordline">&ldquo;{{ words }}&rdquo;</h1>
         {% endif %}
