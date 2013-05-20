@@ -69,7 +69,10 @@ a {
 
 footer {
   padding: 50px;
-  text-align: center; }
+  text-align: left;
+  max-width: 600px; 
+  margin-left: auto ;
+  margin-right: auto ; }
   footer p {
     color: #555;
     font: 400 15px/15px "open sans"; }
@@ -166,8 +169,10 @@ footer {
   background: #fcfaf2;
   padding: 350px 0; }
   .sample#bringhurst .text {
-    margin: 0 auto;
-    padding: 0 20px;
+    /*margin: 0 auto;*/
+    margin-left: auto ;
+    margin-right: auto ;
+    /*padding: 0 20px;*/
     width: 1200px;
     text-align: center; }
   .sample#bringhurst h1 {
